@@ -1,0 +1,25 @@
+#! bin/bash
+
+                    
+interval=1          #definiamo le variabili di intervallo
+long_interval=10
+
+{
+	trap "exit" SIGUSR1           #tramite il comando trap, stabiliamo come si deve comportare lo script in caso di interruzione forzata dall'utente (^c)
+	sleep $interval; sleep $interval
+	while true
+	do
+		echo -n '.'
+		sleep $interval
+	done; } &         #il ciclo while fa si che in background il processo stampa un punto ogni intervallo, la & serve per rendere il processo attivo in background 
+pid=$!
+trap "echo !; kill -USR1 $pid; wait $pid" EXIT    #trap che va a "pulire" il processo quando si conclude lo script tramite ^c
+
+echo -n 'processo molto lungo'     #va a mettere in output "processo molto lungo" e fa partire l'intervallo lungo, nel mentre il ciclo while stampa i "."
+sleep $long_interval
+echo 'finito!'
+kill -USR1 $pid
+wait $pid
+trap EXIT
+
+exit $?
