@@ -1,0 +1,13 @@
+#! bin/bash
+ 
+
+ROOT_UID=0   #settiamo la variabile rootuid per creare l'if di comparazione che v ci dirà se siamo o meno l'utente root
+if [ "$UID" -eq "$ROOT_UID" ]
+then
+	echo "sei il root"
+else
+	echo "non sei il root"
+fi
+
+exit 0
+
