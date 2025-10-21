@@ -1,0 +1,21 @@
+#! /bin/bash  
+
+declare -A address
+
+address[carlo]="Via Cristoforo Colombo 22, Roma, 00144"   #si dichiarono gli array di address
+address[marco]="Via Colombo Cristoforo 55, Roma, 00332"
+address[andrea]="Via Poggio Laurentino 4, Roma, 00144"
+
+echo "l'indirizzo di carlo è ${address[carlo]}"    #si stampano gli array con parametro selezionato
+echo 
+
+echo "l'indirizzo di marco è ${address[marco]}"
+echo
+
+echo "l'indirizzo di andrea è ${address[andrea]}"
+echo
+
+echo "${!address[*]}"    #stampa tutti i valori di array
+echo
+
+exit
