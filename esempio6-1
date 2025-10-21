@@ -1,0 +1,13 @@
+#! bin/bash
+
+echo "salve"
+
+echo $?   #la variabile $? è una variabile che indica l'exit state, se il valore è 0 significa che il comando è andato bene, valore diverso da 0 indica errore
+
+comandoacaso
+
+echo $?   # l'output sarà sicuramente diverso da 0
+
+echo 
+
+exit 113  #riporterà il valore 113 sulla shell, si piò confermare con $? NB L'exit può essere anche una variabile
