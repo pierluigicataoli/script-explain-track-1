@@ -1,0 +1,31 @@
+#! bin/bash
+
+echo
+
+a=879     #dichiarazione variabile a
+
+echo "il valore di \"a\" è $a"    # questo comando permette di far vedere all'utente il valore della variabile a , le \ fanno capire alla shell che i valori nei doppi apici devono essere copiati letteralmente come vengono inseriti nelle doppie apici, quindi l'output finale è " il valore di a è 879.
+echo
+
+let a=16+5   # let viene utilizzato per le operazioni aritmetiche, quindi il valore di a è la somma di 16 e 5 
+
+echo "ora il valore di \"a\" è $a"  #stessa stampa di prima
+echo
+
+echo -n  " i valore di \"a\" nel loop for sono: "   # l'unica novità è l'opzione -n, opzione che permette all'output di non andare a capo.
+
+for a in 7 8 9 11     # il ciclo for è semplicemente un ciclo che stampa in output il valore di a, valore che cambia ad ogni ciclo for 
+do
+	echo -n "$a"
+done
+
+echo
+
+echo -n "inserisci \"a\" "
+read a    #read è un comando che permette di inserire in input un valore ad una variabile
+
+echo "il valore di \"a\" ora è: $a"
+
+echo
+
+exit
