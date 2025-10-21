@@ -1,4 +1,5 @@
-#! bin/bash     # she bang che specifica la shell che viene utilizzata per far partire lo script
+#! bin/bash    
+# she bang che specifica la shell che viene utilizzata per far partire lo script
 # questo è un programma di pulizia dei log    NB: devi avere permesso di root per svolgere il programma, quindi far partire lo scrpit con il comando su o sudo
 
 cd /var/log      # ci spostiamo all'interno della directory log 
