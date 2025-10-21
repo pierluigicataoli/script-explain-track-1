@@ -1,0 +1,10 @@
+#! bin/bash     # she bang che specifica la shell che viene utilizzata per far partire lo script
+# questo è un programma di pulizia dei log    NB: devi avere permesso di root per svolgere il programma, quindi far partire lo scrpit con il comando su o sudo
+
+cd /var/log      # ci spostiamo all'interno della directory log 
+cat /dev/null > messages    # con questo comando mettiamo in messages e successivamente in wtmp il contenuto di null, si utilizza per cancellare un file
+cat /dev/null > wtmp
+
+echo "i file log sono stati puliti"  # semplice output
+
+exit # permette di terminare lo script 
