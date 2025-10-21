@@ -1,0 +1,75 @@
+#! bin/bash
+
+minparametri=10   #definiamo il numero di parametri minimi da inserire in input
+
+echo
+
+echo "il nome dello script è \"$0\"."   #entrambi i comando echo stampano il nome del file
+
+echo "il nome dello script è \"`basename $0`\"." 
+echo
+
+if [ -n "$1" ]                 #questo si ripete per tutti i parametri inseriti, dove semplicemente il ciclo if "comprende" il numero di parametro e lo stampa in output"
+then
+ echo "Parameter #1 is $1" 
+fi
+
+if [ -n "$2" ]              
+then
+ echo "Parameter #2 is $2" 
+fi
+
+if [ -n "$3" ]             
+then
+ echo "Parameter #3 is $3"
+fi
+
+if [ -n "$4" ]              
+then
+ echo "Parameter #4 is $4"  
+fi
+
+if [ -n "$5" ]              
+then
+ echo "Parameter #5 is $5"  
+fi
+
+if [ -n "$6" ]              
+then
+ echo "Parameter #6 is $6"  
+fi
+
+if [ -n "$7" ]             
+then
+ echo "Parameter #7 is $7"  
+fi
+
+if [ -n "$8" ]              
+then
+ echo "Parameter #8 is $8"  
+fi
+
+if [ -n "$9" ]             
+then
+ echo "Parameter #9 is $9"  
+fi
+
+if [ -n "${10}" ]             #NB -> il parametro 10 deve essere espresso tramite {} per evitare errori di interpretazione.
+then
+ echo "Parameter #10 is ${10}" 
+fi
+
+echo "--------------------------"
+echo "tutti i parametri di comando sono: "$*""    #questo echo stampa tutti i valori presenti nei parametri dell'array.
+echo
+
+if [ $# -lt "$minparametri" ]   #ciclo if che funge da checker dello script, in caso non si hanno 10 parametri lo script non funziona.
+then
+echo
+echo "lo script ha bisogno almeno di "$minparametri" per funzionare"
+fi
+
+echo
+
+exit 0
+
